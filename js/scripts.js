@@ -1,29 +1,73 @@
 /* Use comments often as it helps everyone, including yourself! */
+// IIFE starts
+let pokemonRepository = (function () {
+  
+  // Array for storing Pokémon.  
+  let pokemonList = [
+    {name:  "Bulbasaur", height: 2, weight: 15.2, type: ['Grass ', ' Poison']},
+    {name: "Charzard", height: 5, weight: 199.5, type: ['Fire ', ' Flying']},
+    {name: "Mewtwo", height: 6, weight: 269, type: ['Physhic']}];
+    
+  // Functions to add Pokémon to and retrieve from Pokémon list. 
+  // keywords to make functions accessible outside IIFE.
+  return {
+    add: function (pokemon) {
+      if (typeof pokemon === "object" && "name" in pokemon)
+    {
+      pokemonList.push(pokemon);
+    } else {
+        console.log("invalid Pokémon")
+    }},
+    getAll: function () {
+      return pokemonList;
+    },
+  };
 
-// an array of Pokémon with physical and type details.
-let pokemonList = [
-    {name:  "Bulbasaur", height: 2, weight: 15.2, type: ['grass ', ' poison']},
-    {name: "Charzard", height: 5, weight: 199.5, type: ['fire ', ' flying']},
-    {name: "Mewtwo", height: 6, weight: 269, type: ['physhic']}
-];
+    // Makes functions accessible outside IIFE.
+    // return {
+    //   add: add,
+    //   getAll: getAll,
+    //   filterItems: filterItems,
+    // };
 
-// for (let i = 0; i < pokemonList.length; i++) {
-//   // check if the height is greater than or equal to 6 then prints details
-//   if (pokemonList[i].height >= 6) {
-//     document.write(pokemonList[i].name + " (Type: " + pokemonList[i].type + ")" + " (Weight: " + pokemonList[i].weight + ")" + " (Height: " + pokemonList[i].height + ") - Wow, that's tall!<br>");
-//   } else {
-//       document.write(pokemonList[i].name + " (Type: " + pokemonList[i].type + ")" + " (Weight: " + pokemonList[i].weight + ")" + " (Height: " + pokemonList[i].height + ")<br>");
-//   }
-// }
+})();  // IIFE ENDS.
 
-// function that checks if the height is greater than or equal to 6 then prints details
-function myLoopFunction(pokemon) {
-  if (pokemon.height >= 6) {
-    document.write(pokemon.name + " (Type: " + pokemon.type + ")" + " (Weight: " + pokemon.weight + ")" + " (Height: " + pokemon.height + ") - Wow, that's tall!<br>");
-  } else {
-      document.write(pokemon.name + " (Type: " + pokemon.type + ")" + " (Weight: " + pokemon.weight + ")" + " (Height: " + pokemon.height + ")<br>");
-  }
-}
+pokemonRepository.add(
+  { 
+    name: 'Pikachu', 
+    height: 1.04, 
+    weight: 13.2, 
+    type: ['Electric'],
+    category: ' Licking' 
+  });
 
-pokemonList.forEach(myLoopFunction);
+console.log(pokemonRepository.getAll());
 
+document.write("" + "Pokédex" + "<br>");
+pokemonRepository.getAll().forEach(function (pokemon) {
+  document.write( 
+      " " +
+      pokemon.name +
+      " -" +
+      " " +
+      "(Height" +
+      ": " +
+      pokemon.height +
+      ")," +
+      " " +
+      "(Weight" +
+      ": " +
+      pokemon.weight +
+      ")," +
+      " " +
+      "(Type" +
+      ": " +
+      pokemon.type +
+      ")," +
+      " " +
+      "(Category" +
+      ": " +
+      pokemon.category +
+      ") <br>"
+  );
+});

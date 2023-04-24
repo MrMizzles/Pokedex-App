@@ -15,9 +15,10 @@ p {
     font-weight: 600;
     line-height: 20px;
     color:#ffffff;
-    width: 550px;
+    width: 600px;
     height: auto;
     border: 1px solid rgb(0, 255, 51);
     box-sizing: border-box;
+    border-style: dashed;
     padding: 5px;
 }

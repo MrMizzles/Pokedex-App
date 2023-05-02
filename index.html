@@ -8,12 +8,22 @@
     <title>Pokedex</title>
 </head>
 <body>
+    <div id="loading">
+        <img id="loading-image" src="ajax-loader.gif" alt="Loading..." />
+    </div>
+    <header class="fixed-top">
+        <nav class="navbar">
+          <a class="navbar-brand" href="index.html">Pokédex</a>
+          <form class="form-inline">
+            <input id="search-input" class="pokemon-search form-control mr-sm-2" type="search" placeholder="Search Pokémon" aria-label="Search">
+          </form>
+      </nav>
+    </header> 
     <h1>Pokédex</h1>
-    <ul class="pokemon-list"></ul>).
-    <strong>
-        <script src="is/promise-polyfill.is"></script>
-        <script src="js/fetch-polyfill.js"></script>
-        <script src="js/scripts.js"></script>
-    </strong>
+    <ul class="pokemon-list"></ul>
+    
+    <script src="js/promise-polyfill.js"></script>
+    <script src="js/fetch-polyfill.js"></script>
+    <script src="js/scripts.js"></script>
 </body>
 </html>

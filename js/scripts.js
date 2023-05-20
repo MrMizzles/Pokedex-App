@@ -113,24 +113,17 @@ let pokemonRepository = (function () {
   
     let contentElement = document.createElement('p');
     contentElement.innerText = text;
-    
-    let container = document.querySelector('#image-container');
 
-    let myImage = document.createElement('img');
-    myImage.src = imageUrl
-
-    // let imageElement = document.createElement('img');
-    // imageElement.setAttribute('src', img);
-    // imageElement.setAttribute('width', '304');
-    // imageElement.setAttribute('height', '228');
+    let imageElement = document.createElement('img');
+    imageElement.src = imageUrl
+    imageElement.setAttribute('width', '250');
+    imageElement.setAttribute('height', '250');
   
     modal.appendChild(closeButtonElement);
     modal.appendChild(titleElement);
     modal.appendChild(contentElement);
-    // modalContainer.appendChild(imageElement);
-    modalContainer.appendChild(modal);
-    modalContainer.appendChild(myImage);
-  
+    modal.appendChild(imageElement);modalContainer.appendChild(modal);
+   
     modalContainer.classList.add('is-visible');
   }
   
@@ -160,9 +153,10 @@ let pokemonRepository = (function () {
   });
 
   function showDetails(pokemon) {
+    console.log(pokemon);
     loadDetails(pokemon).then(function () {
-      showModal(pokemon.name, + pokemon.weight + ' lbs.', + '<img src=' +
-      pokemon.sprite);
+      showModal(pokemon.name, + pokemon.weight + ' lbs.',
+      pokemon.sprite, + pokemon.sprite2);
       console.log(pokemon);
     })
   };

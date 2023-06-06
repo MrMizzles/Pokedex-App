@@ -53,4 +53,4 @@
 
 ### Resources
 
-- [API used for this application](https://pokeapi.co/api/v2/pokemon/)
+- [API](https://pokeapi.co/api/v2/pokemon/?limit=150)

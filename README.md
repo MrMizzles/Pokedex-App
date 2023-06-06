@@ -23,7 +23,7 @@
 ## Links
 
 - [My Code](https://github.com/MrMizzles/Pokedex-App)
-- [Project site]('https://mrmizzles.github.io/Pokedex-App/#topofpage')
+- [Project site](https://mrmizzles.github.io/Pokedex-App/#topofpage)
 
 ## Process
 

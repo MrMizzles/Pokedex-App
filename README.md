@@ -49,7 +49,7 @@
 
   - [ESLint](https://eslint.org/docs/latest/)
   - [Stylelint](https://gist.github.com/mydea/8a5c49b2a13320871ab29eb88a0e7d37)
-  - [Prettier] (https://github.com/prettier/prettier-vscode)
+  - [Prettier](https://github.com/prettier/prettier-vscode)
 
 ### Resources
 
